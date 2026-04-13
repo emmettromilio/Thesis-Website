@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synapse – Header</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: rgba(42, 42, 42, 0.95);
+      --border: rgba(197, 223, 0, 0.2);
+      --accent: #c5df00;
+      --text-muted: #939393;
+      --text-light: #e5e5e5;
+      --text-dark: #333;
+      --btn-login-bg: #4c4c4c;
+      --font: 'Figtree', sans-serif;
+    }
+
+    body {
+      background: #1a1a1a;
+      font-family: var(--font);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 0 159px;
+      animation: fadeDown 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      width: 100%;
+    }
+
+    /* ── Logo ── */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      height: 48px;
+      width: auto;
+      display: block;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    nav a {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -3px;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    nav a:hover { color: var(--text-light); }
+    nav a:hover::after { width: 100%; }
+
+    /* ── Buttons ── */
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .btn {
+      height: 44px;
+      border-radius: 9999px;
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      border: none;
+      cursor: pointer;
+      padding: 0 24px;
+      white-space: nowrap;
+      transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-login {
+      background: var(--btn-login-bg);
+      color: var(--text-light);
+      min-width: 88px;
+    }
+
+    .btn-login:hover {
+      background: #5a5a5a;
+    }
+
+    .btn-signup {
+      background: var(--accent);
+      color: var(--text-dark);
+      min-width: 105px;
+      box-shadow: 0 0 0 0 rgba(197, 223, 0, 0.4);
+    }
+
+    .btn-signup:hover {
+      box-shadow: 0 0 20px 4px rgba(197, 223, 0, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ── Demo page content below header ── */
+    .page-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 24px;
+    }
+
+    .hero-text {
+      text-align: center;
+      color: var(--text-muted);
+      font-family: var(--font);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      header { padding: 0 40px; }
+      nav { gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .btn-login { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <!-- Logo -->
+    <a href="#" class="logo" aria-label="Synapse home">
+      <img
+        src="https://www.figma.com/api/mcp/asset/ed3343aa-c2a6-4d8f-88d9-9ad162bebfac"
+        alt="Synapse logo"
+      />
+    </a>
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+      <a href="#">Product</a>
+      <a href="#">About</a>
+      <a href="#">Resources</a>
+      <a href="#">Methods</a>
+    </nav>
+
+    <!-- CTA Buttons -->
+    <div class="btn-group">
+      <button class="btn btn-login">Login</button>
+      <button class="btn btn-signup">Sign Up</button>
+    </div>
+  </div>
+</header>
+
+<!-- Placeholder body so the header has context -->
+<div class="page-body">
+  <p class="hero-text">Page content goes here</p>
+</div>
+
+</body>
+</html>

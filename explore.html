@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Synapse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/coolville" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+
+<div id="lottie-overlay">
+    <div id="lottie-container"></div>
+    <span class="lottie-hint">Click anywhere to continue</span>
+</div>
+
+<div id="explore-page">
+    <div class="explore-wrapper">
+        
+        <div class="hero-content">
+            <img src="allimages/big-bulb.png" alt="Synapse" class="explore-logo">
+
+            <h1 class="explore-title">Explore Synapse</h1>
+
+            <div class="button-stack">
+                <div class="explore-btn-row">
+                    <a href="index.html" class="explore-btn">
+                        <img src="allimages/freeform_bulb_icon.png" class="btn-icon-img" alt="">
+                        Website
+                    </a>
+                    <a href="#walkthrough" class="explore-btn">
+                        <img src="allimages/freeform_bulb_icon.png" class="btn-icon-img" alt="">
+                        Walkthrough
+                    </a>
+                </div>
+
+                <a href="#app" class="explore-app-btn">
+                    <img src="allimages/freeform_bulb_icon.png" class="btn-icon-img dark-icon" alt="">
+                    Take me to the App!
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-bar-track">
+            <div class="scroll-bar-inner" id="scroll-bar-inner">
+                <img src="allimages/bottom-scroll-bar.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+// Lottie Logic
+let anim = lottie.loadAnimation({
+    container: document.getElementById('lottie-container'),
+    renderer: 'svg', loop: true, autoplay: true,
+    path: 'Frame-30.json',
+    rendererSettings: { preserveAspectRatio: 'xMidYMid slice' }
+});
+
+const overlay = document.getElementById('lottie-overlay');
+const explorePage = document.getElementById('explore-page');
+overlay.addEventListener('click', () => {
+    overlay.classList.add('fade-out');
+    explorePage.classList.add('visible');
+    setTimeout(() => overlay.style.display = 'none', 900);
+});
+
+// Scrollbar Infinite Loop
+window.addEventListener('load', () => {
+    const inner = document.getElementById('scroll-bar-inner');
+    const first = inner.querySelector('img');
+    if (!first) return;
+    function fill() {
+        const w = first.naturalWidth || first.offsetWidth;
+        const copies = Math.ceil((window.innerWidth * 3) / w) + 2;
+        inner.innerHTML = ''; 
+        for (let i = 0; i < copies; i++) {
+            const clone = first.cloneNode(true);
+            clone.style.marginRight = '30px';
+            inner.appendChild(clone);
+        }
+    }
+    if (first.complete) fill(); else first.onload = fill;
+});
+</script>
+</body>
+</html>

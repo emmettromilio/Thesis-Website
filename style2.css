@@ -1,0 +1,169 @@
+/* ============================================================
+   style2.css — Smaller Elements & Perfect Centering
+   ============================================================ */
+
+*, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* No window scroll */
+    background-color: #353535;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Overlay Styling */
+#lottie-overlay {
+    position: fixed; inset: 0; z-index: 9999;
+    background-color: #c5df00; display: flex;
+    align-items: center; justify-content: center; cursor: pointer;
+}
+#lottie-container { width: 100%; height: 100%; position: absolute; }
+#lottie-container svg { width: 100% !important; height: 100% !important; object-fit: cover; }
+.fade-out { opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
+.lottie-hint { position: absolute; bottom: 30px; font-family: 'Coolville'; color: #353535; opacity: 0.5; font-size: 14px; }
+
+/* Main Frame Positioning */
+#explore-page { 
+    width: 100%; 
+    height: 100%; 
+    padding: 30px 45px; 
+    opacity: 0; 
+    visibility: hidden; 
+}
+#explore-page.visible { opacity: 1; visibility: visible; }
+
+.explore-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #C5DF00;
+    border: 1px solid rgba(137, 137, 137, 0.3);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+}
+
+/* Vertical Content Alignment */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -30px; /* Counter-balance scrollbar space */
+}
+
+/* Shrunk Logo */
+.explore-logo {
+    width: 55px; /* Shrunk from 80px */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+/* Shrunk Title */
+.explore-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: clamp(32px, 5vw, 80px); /* Shrunk from 100px */
+    letter-spacing: 0.1em;
+    color: #353535;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* Button Alignment Logic */
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.explore-btn-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Shrunk Button Dimensions */
+.explore-btn, .explore-app-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: 'Coolville', sans-serif;
+    font-size: 24px; /* Shrunk from 28px */
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    border-radius: 35px; /* Softer corners for smaller size */
+    transition: all 0.2s ease;
+}
+
+.explore-btn {
+    background: #353535;
+    color: #C5DF00;
+    width: 290px; /* Shrunk from 380px */
+    height: 80px;  /* Shrunk from 100px */
+}
+
+.explore-app-btn {
+    background: transparent;
+    color: #353535;
+    width: 400px; /* Shrunk from 500px */
+    height: 80px;
+    border: 5px solid #353535; /* Slightly thinner stroke */
+}
+
+.explore-btn:hover { background: #222; transform: scale(1.02); }
+.explore-app-btn:hover { transform: scale(1.02); }
+
+/* Shrunk Icons */
+.btn-icon-img {
+    height: 35px; /* Shrunk from 45px */
+    width: auto;
+    filter: invert(86%) sepia(60%) saturate(700%) hue-rotate(20deg) brightness(105%);
+}
+
+.dark-icon {
+    filter: brightness(0);
+}
+
+/* Scrollbar Track (Scaled Down) */
+.scroll-bar-track {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.scroll-bar-inner {
+    display: flex;
+    width: max-content;
+    animation: scrollLeft 180s linear infinite;
+}
+
+.scroll-bar-inner img {
+    height: 35px; /* Shrunk scrollbar icons */
+    width: auto;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+    #explore-page { padding: 15px; }
+    .explore-btn-row { flex-direction: column; gap: 12px; }
+    .explore-btn, .explore-app-btn { width: 85vw; height: 70px; font-size: 20px; }
+    .explore-title { font-size: 32px; }
+    .explore-logo { width: 45px; }
+}
