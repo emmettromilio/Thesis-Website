@@ -1,0 +1,3 @@
+htacess.
+
+AddType application/json .json

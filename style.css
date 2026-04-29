@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Coolville';
+    src: url('fonts/Coolville.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'Figtree', sans-serif;
     background-color: #2a2a2a;
@@ -182,10 +189,10 @@ body {
 
 /* ─── HERO SECTION ─────────────────────────────────────────── */
 .hero {
-    padding: 110px 80px 40px; /* top = nav height (90px) + 20px gap */
+    padding: 110px 80px 40px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;  /* align to top, not center */
+    align-items: flex-start;
 }
 
 .hero-content {
@@ -193,23 +200,45 @@ body {
     width: 100%;
 }
 
-.hero-card {
+/* .hero-card {
     background-color: #c5df00;
     border-radius: 50px;
-    padding: 60px 0 60px 80px;  /* no right padding — images flush right */
+    padding: 60px 0 60px 80px;
     position: relative;
-    overflow: visible;           /* allow images to show fully */
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
 }
+*/
+
+.hero-card {
+    background-color: #c5df00;
+    border-radius: 50px;
+    padding-left: 80px ;
+    position: relative;
+    overflow: hidden; /* Important: clips the bulb to the card boundary */
+    display: flex;
+    align-items: center;
+    min-height: 450px; /* Adjust based on your text height */
+}
 
 .hero-text-content {
     position: relative;
-    z-index: 2;
-    max-width: 420px;
-    flex-shrink: 0;
+    z-index: 2; /* Ensures text is always readable over the bulb */
+    max-width: 520px;
+}
+
+.hero-title-index {
+    font-family: 'Coolville', sans-serif;
+    font-size: 64px;
+    line-height: 1.1;
+    color: #2a2a2a;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -1.8px;
+    margin-bottom: 20px;
 }
 
 .hero-title-product {
@@ -223,17 +252,17 @@ body {
     margin-bottom: 20px;
 }
 
-.hero-subtitle-product {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #272306;
-    font-weight: 400;
-}
-
 .hero-subtitle {
     font-size: 20px;
     color: #272306;
     margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.hero-subtitle-product {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #272306;
     font-weight: 400;
 }
 
@@ -247,15 +276,32 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    flex-shrink: 0;
-    width: 400px;
-    align-self: stretch;         /* stretch full card height */
-    border-radius: 0 50px 50px 0; /* match card's right corners */
+    padding-left: 100px;
+    flex-shrink: 0px;
+    align-items: flex-end;
+    margin-top: 100px;
+    border-radius: 0 50px 50px 0;
 }
 
 .hero-graphic1-product,
 .hero-graphic2-product {
-    width: 100%;
+    width: 80%;
+    
+}
+
+.hero-icon {
+    position: absolute;
+    /* Positioned to bleed off the bottom-right corner */
+    right: -50px; 
+    bottom: -30px;
+    
+    /* scaleX(-1) flips it horizontally */
+    /* rotate(-10deg) gives it that angled look from your 'needed' image */
+    transform: scaleX(-1) rotate(-50deg);
+    
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
 }
 
 .product1-img,
@@ -264,6 +310,697 @@ body {
     height: auto;
     display: block;
 }
+
+.hero-bulb-svg {
+    width: 480px; /* Size scaled to match hero importance */
+    height: auto;
+    display: block;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+
+/* Product Page Layout */
+.product-page .logo-link {
+    text-decoration: none;
+}
+
+.product-hero {
+    padding: 140px 80px 40px;
+}
+
+.product-hero-card {
+    background-color: #c5df00;
+    border-radius: 50px;
+    padding: 80px 64px;
+    display: grid;
+    grid-template-columns: minmax(420px, 1.1fr) 420px;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-hero-copy {
+    max-width: 640px;
+}
+
+.eyebrow-text {
+    font-size: 18px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.product-hero-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 72px;
+    line-height: 0.98;
+    color: #2a2a2a;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.product-hero-text,
+.product-section-text,
+.product-pill-text {
+    color: #272306;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.product-summary-copy {
+    color: #939393 ;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 400;
+    
+}
+
+.product-pill-group {
+    display: grid;
+    gap: 24px;
+    margin-right: 90px
+ 
+}
+
+.product-pill-card {
+    background-color: rgb(58, 59, 50);
+    border: 1px solid rgba(197, 223, 0, 0.3);
+    border-radius: 48px;
+    padding: 40px 48px;
+    margin-right: -200px;
+    display: grid;
+    gap: 28px;
+    align-items: center;
+    min-height: 160px;
+    overflow: visible;
+    transition: all 0.3s ease;
+}
+
+.product-pill-card:hover {
+    transform: scale(1.05);
+
+}
+
+.product-pill-bulb {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: rgb(197, 223, 0);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.product-pill-bulb img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+
+.product-pill-title {
+    font-size: 24px;
+    color: #c5df00;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.product-pill-text {
+    color: #c5df00;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.product-summary {
+    margin-top: 24px;
+}
+
+.product-summary-card {
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    padding: 56px 64px;
+    margin-bottom: 90px ;
+    ;
+}
+
+.product-summary-heading {
+    font-family: 'Figtree' sans-serif;
+    font-size: 28px;
+    color: #c5df00;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
+.product-feature {
+    padding-top: 40px;
+}
+
+.product-feature-card {
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    padding: 40px;
+    overflow: visible;
+    position: relative;
+}
+
+.product-feature-visual-wrap {
+    position: relative;
+    border-radius: 61px;
+    overflow: visible;
+    background-color: #2a2a2a00;
+    min-height: 520px;
+    margin-bottom: -60px;
+    z-index: 5;
+}
+
+.product-feature-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -70px;
+    width: 65%;
+    height: auto;
+    background: #c5df00;
+    border-radius: 40px 40px 0px 0px;
+    padding: 50px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 4;
+    overflow: visible;
+}
+
+.badge-icon {
+    width: 40px;
+
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.badge-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 22px;
+    color: #2a2a2a;
+    font-weight: 400;
+
+    white-space: nowrap;
+}
+
+.product-feature-content {
+    padding-top: 80px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.feature-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+    position: relative;
+    z-index: 6;
+}
+
+.product-feature-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(660px, calc(100% - 48px));
+    background: rgba(197, 223, 0, 0.14);
+    border: 1px solid rgba(197, 223, 0, 0.28);
+    border-radius: 40px;
+    padding: 34px 36px;
+    display: grid;
+    gap: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.18);
+    display: none;
+}
+
+.product-feature-panel--guided {
+    background: rgba(197, 223, 0, 0.12);
+}
+
+.panel-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 24px;
+    background-color: #c5df00;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.panel-icon img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.panel-type {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: #2a2a2a;
+    margin-bottom: 8px;
+}
+
+.panel-title {
+    font-family: 'Figtree' sans-serif;
+    font-size: 28px;
+    font-weight: 50;
+    font-style: italic;
+    color: #c5df00;
+    margin: 0 0 16px 0;
+}
+
+.panel-description {
+    color: #939393;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 16px;
+}
+
+.product-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.product-info-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.product-info-row .product-info-card {
+    flex: 1;
+}
+
+.product-info-card {
+    background-color: rgba(197, 223, 0, 0.08);
+    border: 1px solid rgba(197, 223, 0, 0.18);
+    border-radius: 32px;
+    padding: 32px;
+}
+
+.product-info-card--bright {
+    background-color: rgba(197, 223, 0, 0.15);
+}
+
+.info-card-title {
+    font-size: 20px;
+    color: #c5df00;
+    margin-bottom: 18px;
+}
+
+.info-card-list {
+    color: #c5df00;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-left: 18px;
+}
+
+.info-card-list li {
+    margin-bottom: 12px;
+}
+
+.cta-section {
+    padding: 40px 80px 80px;
+}
+
+/* ─────────────────────────────────────────────────────────── */
+
+/* info bar product */
+
+
+.info-bar-container {
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    padding: 60px;
+    padding: 50px;
+    margin: 60px;
+    position: relative;
+    overflow: hidden; /* Important: clips the bulb to the card boundary */
+    display: flex;
+    align-items: center;
+    
+
+}
+
+/* ─────────────────────────────────────────────────────────── */
+
+
+
+/* about page */
+
+.about-hero {
+    padding: 140px 80px 40px;
+}
+
+.about-hero-card {
+    background-color: #c5df00;
+    border-radius: 50px;
+    padding: 80px 64px;
+    display: grid;
+    grid-template-columns: minmax(420px, 1.1fr) 420px;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-copy {
+    max-width: 640px;
+}   
+
+.about-hero-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 72px;
+    line-height: 0.98;
+    color: #2a2a2a;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+}
+
+.about-hero-text {
+    color: #272306;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about-summary {
+    margin-top: 24px;
+}
+
+.about-summary-card1 {
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    padding: 56px 64px;
+    margin-bottom: 90px ;
+}
+
+.about-summary-container {
+    padding: 40px 80px;
+    flex-direction: row;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 0 auto;
+}
+.about-summary-card2 {
+    background-color: #2a2a2a00;
+    border-radius: 50px;
+    border: #444 solid 1px;
+    border-color: rgba(201, 202, 194, 0.18);
+    padding: 56px 64px;
+    margin-bottom: 90px ;
+}
+
+.about-summary-heading {
+    font-family: 'Coolville', sans-serif;
+    font-size: 24px;
+    color: #3a3a3a;
+    background-color: #b0c900;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 15px 20px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+    line-height: 1.05;
+}
+
+.about-summary-copy {
+    color: #939393 ;
+    line-height: 1.8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about-summary-card3 {
+    background-color: #3b3b3b;
+    border-radius: 50px;
+    align-items: center;
+    padding: 56px 64px;
+    margin: 90px
+}
+
+/* Resources page styles */
+.resources-hero {
+    padding: 140px 80px 40px;
+}
+
+.resources-hero-card {
+    background-color: #c5df00;
+    border-radius: 50px;
+    padding: 80px 64px;
+    max-width: 1246px;
+    margin: 0 auto;
+}
+
+.resources-hero-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 64px;
+    line-height: 1.05;
+    color: #2a2a2a;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -1.4px;
+    margin-bottom: 24px;
+    max-width: 920px;
+}
+
+.resources-hero-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #272306;
+    max-width: 960px;
+}
+
+.resources-section {
+    padding: 0 80px 40px;
+}
+
+.resources-section-card {
+    background-color: #3b3b3b;
+    border: 1px solid #2a2a2a;
+    border-radius: 50px;
+    padding: 56px 64px;
+    max-width: 1246px;
+    margin: 0 auto 40px;
+}
+
+.resources-section-heading {
+    font-family: 'Coolville', sans-serif;
+    font-size: 36px;
+    line-height: 1.1;
+    color: #c5df00;
+    text-transform: uppercase;
+    letter-spacing: -0.9px;
+    margin-bottom: 24px;
+    max-width: 720px;
+}
+
+.resources-section-text {
+    color: #a9a9a9;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    max-width: 1060px;
+}
+
+.resources-card-grid {
+    max-width: 1246px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.resources-card {
+    background-color: #3b3b3b;
+    border: 1px solid #2a2a2a;
+    border-radius: 50px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 340px;
+}
+
+.resources-card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.resources-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: #c5df00;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+}
+
+.resources-card-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.resources-card-title-wrap {
+    background-color: #c5df00;
+    border-radius: 50px;
+    padding: 18px 32px;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.resources-card-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 32px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.resources-card-body {
+    background-color: #2a2a2a;
+    border-radius: 50px;
+    border: 1px solid rgba(197, 223, 0, 0.2);
+    padding: 32px 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 220px;
+}
+
+.resources-card-text {
+    color: #d4d4d4;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.resources-card-tooltip {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background-color: #1f1f1f;
+    border-radius: 50px;
+    border: 1px solid rgba(197, 223, 0, 0.18);
+    padding: 18px 24px;
+}
+
+.resources-card-tooltip-icon {
+    width: 44px;
+    height: 44px;
+    background-color: #c5df00;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #2a2a2a;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.resources-card-callout {
+    font-family: 'Coolville', sans-serif;
+    font-size: 18px;
+    color: #c5df00;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 1200px) {
+    .resources-hero,
+    .resources-section {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .resources-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .resources-hero,
+    .resources-section {
+        padding: 110px 24px 40px;
+    }
+
+    .resources-hero-card,
+    .resources-section-card {
+        padding: 40px 24px;
+        border-radius: 32px;
+    }
+
+    .resources-hero-title {
+        font-size: 44px;
+    }
+
+    .resources-card {
+        min-height: auto;
+    }
+}
+
+.about-numbered-bullet {
+    width: 32px;
+    height: 32px;
+    background-color: #c5df00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-weight: 600;
+}
+
+.about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.about-list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(229, 229, 229, 0.8);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
 /* ─────────────────────────────────────────────────────────── */
 
 
@@ -728,15 +1465,15 @@ body {
     .section-inset-container {
         padding: 40px 60px;
     }
-    
+
     .section-content-grid {
         grid-template-columns: 400px 1fr;
     }
-    
+
     .section-split-layout {
         grid-template-columns: 600px 1fr;
     }
-    
+
     .section-split-layout.reverse {
         grid-template-columns: 1fr 600px;
     }
@@ -747,17 +1484,17 @@ body {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .method-pills-column {
         height: 300px;
     }
-    
+
     .section-split-layout,
     .section-split-layout.reverse {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .demo-container {
         height: 350px;
     }
@@ -765,70 +1502,747 @@ body {
     .hero-graphics-product {
         width: 300px;
     }
+
+    .product-hero-card {
+        grid-template-columns: 1fr;
+        padding: 60px 48px;
+    }
+
+    .product-pill-card {
+        min-height: auto;
+    }
+
+    .product-feature-card {
+        padding: 32px;
+    }
+
+    .product-feature-visual-wrap {
+        margin-bottom: -50px;
+        min-height: 300px;
+    }
+
+    .product-feature-badge {
+        top: -50px;
+        height: auto;
+        font-size: 14px;
+        padding: 40px 28px;
+    }
+
+    .badge-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .badge-title {
+        font-size: 18px;
+    }
+
+    .product-feature-content {
+        padding-top: 60px;
+    }
+
+    .product-feature-panel {
+        display: none;
+    }
+
+    .panel-title {
+        font-size: 34px;
+    }
+
+    .product-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-info-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .product-summary-card,
+    .product-feature-card,
+    .product-info-card {
+        padding: 32px;
+    }
 }
 
 @media (max-width: 768px) {
     .header {
         padding: 0 24px;
     }
-    
+
     .nav {
         display: none;
     }
-    
-    .hero {
+
+    .product-hero {
         padding: 110px 24px 40px;
     }
 
-    .hero-card {
-        flex-direction: column;
-        padding: 40px 32px;
+    .product-hero-card {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
         border-radius: 32px;
+        gap: 24px;
     }
 
-    .hero-graphics-product {
-        width: 100%;
-        border-radius: 0 0 32px 32px;
+    .product-hero-title {
+        font-size: 48px;
     }
-    
+
+    .product-hero-text,
+    .product-section-text,
+    .product-summary-copy {
+        font-size: 15px;
+    }
+
+    .product-pill-card {
+        padding: 32px 28px;
+        min-height: 140px;
+        gap: 20px;
+    }
+
     .section-inset-container {
         padding: 20px 24px;
     }
-    
+
+    .section-split-layout,
+    .section-split-layout.reverse,
+    .product-info-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .product-feature-card {
+        padding: 24px;
+    }
+
+    .product-feature-panel {
+        top: 45%;
+        width: calc(100% - 32px);
+        padding: 24px;
+    }
+
+    .panel-title {
+        font-size: 28px;
+    }
+
+    .product-info-card {
+        padding: 24px;
+    }
+
+    .feature-image {
+        max-height: 300px;
+    }
+
+    .product-feature-badge {
+        top: -40px;
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .badge-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .badge-title {
+        font-size: 16px;
+    }
+
+    .product-section-title {
+        font-size: 32px;
+    }
+
     .tools-section-bg,
     .map-section-bg,
     .organize-section-bg,
     .create-section-bg {
         padding: 40px 24px;
     }
-    
+
     .footer {
         padding: 64px 24px;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 48px;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 24px;
         text-align: center;
     }
-    
+
     .cta-card {
         padding: 60px 32px;
     }
-    
+
     .cta-title {
         font-size: 40px;
     }
 }
 
+/* ─── EXHIBITION SCREENS ─── */
+/* These rules handle the specific full-screen loop video setup */
+
+.exhibition-body {
+    background-color: #c5df00;
+    overflow: hidden; /* Prevent scrolling on the loop screen */
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer; /* Hint that interaction is possible */
+}
+
+.loop-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loop-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Video fills the container */
+    z-index: 1;
+}
+
+/* This bar hides the unwanted text at the bottom of loop.mp4 */
+.crop-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Adjust this height to cover your specific text */
+    background-color: #c5df00;
+    z-index: 10; /* Sits over the video */
+}
+
+.interaction-text {
+    position: absolute;
+    bottom: 24px; /* Centered in the crop bar area */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.5); /* Small black text at 50% opacity */
+    font-weight: 500;
+    z-index: 20; /* Sits over the crop bar */
+    pointer-events: none; /* Clicking text counts as clicking the screen */
+}
+
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* ─── METHODS PAGE STYLES ─── */
+
+.methods-hero {
+    padding: 140px 80px 60px;
+    background-color: #2a2a2a;
+}
+
+.methods-hero-card {
+    max-width: 1246px;
+    margin: 0 auto;
+}
+
+.methods-hero-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 64px;
+    font-weight: 100;
+    line-height: 1.1;
+    color: #c5df00;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+}
+
+.methods-hero-text {
+    font-size: 18px;
+    color: #a9a9a9;
+    line-height: 1.8;
+    max-width: 720px;
+}
+
+.methods-section {
+    padding: 80px;
+    background-color: #2a2a2a;
+}
+
+.method-card {
+    background-color: #3b3b3b;
+    border: 1px solid #2a2a2a;
+    border-radius: 50px;
+    padding: 56px 64px;
+    margin-bottom: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.method-badge {
+    position: absolute;
+    top: -30px;
+    left: 64px;
+    background: #c5df00;
+    border-radius: 40px;
+    padding: 12px 32px;
+    z-index: 10;
+}
+
+.method-badge-text {
+    font-family: 'Coolville', sans-serif;
+    font-size: 16px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.method-visual-wrap {
+    position: relative;
+    margin-top: 30px;
+}
+
+.method-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 32px;
+    max-height: 450px;
+}
+
+.method-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.method-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #c5df00;
+    font-weight: 100;
+    letter-spacing: -0.9px;
+    margin: 0;
+}
+
+.method-description {
+    font-size: 16px;
+    color: #a9a9a9;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background-color: #2a2a2a;
+    border-radius: 32px;
+    border: 1px solid rgba(197, 223, 0, 0.15);
+}
+
+.step-icon {
+    font-family: 'Coolville', sans-serif;
+    font-size: 20px;
+    color: #c5df00;
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.step p {
+    font-size: 14px;
+    color: #d4d4d4;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Methods Page Responsive */
+@media (max-width: 1200px) {
+    .methods-hero {
+        padding: 120px 60px 50px;
+    }
+
+    .methods-section {
+        padding: 60px;
+    }
+
+    .method-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 48px 48px 56px;
+    }
+
+    .method-visual-wrap {
+        order: -1;
+    }
+
+    .method-image {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .methods-hero {
+        padding: 110px 24px 40px;
+    }
+
+    .methods-hero-title {
+        font-size: 48px;
+    }
+
+    .methods-hero-text {
+        font-size: 15px;
+    }
+
+    .methods-section {
+        padding: 40px 24px;
+    }
+
+    .method-card {
+        padding: 40px 24px 48px;
+        margin-bottom: 40px;
+    }
+
+    .method-badge {
+        left: 24px;
+        top: -24px;
+    }
+
+    .method-title {
+        font-size: 28px;
+    }
+
+    .method-description {
+        font-size: 15px;
+    }
+
+    .step {
+        padding: 12px 16px;
+    }
+
+    .step-icon {
+        font-size: 18px;
+    }
+
+    .step p {
+        font-size: 13px;
+    }
+
+    .method-image {
+        max-height: 250px;
+    }
+}
+
+/* ─── ABOUT PAGE STYLES ─── */
+
+.about-section {
+    background-color: #2a2a2a;
+}
+
+.about-hero {
+    padding: 140px 80px 40px;
+    background-color: #2a2a2a;
+}
+
+.about-hero-card {
+    background-color: #c5df00;
+    border-radius: 45px;
+    padding: 64px 80px;
+    max-width: 1304px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero-title {
+    font-family: 'Coolville', sans-serif;
+    font-size: 72px;
+    line-height: 79.2px;
+    color: #2a2a2a;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+}
+
+.about-hero-text {
+    font-size: 18px;
+    line-height: 29.25px;
+    color: #2a2a2a;
+    font-weight: 400;
+    max-width: 600px;
+}
+
+.about-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1304px;
+    margin: 0 auto;
+}
+
+.about-card {
+    border-radius: 45px;
+    padding: 52px;
+    position: relative;
+    outline: 1px solid #555555;
+    outline-offset: -1px;
+    min-height: 390px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-card-dark {
+    background-color: #3b3b3b;
+}
+
+.about-card-light {
+    background-color: #2a2a2a;
+}
+
+.about-card-alt {
+    background-color: #2a2a2a;
+    outline: 1px solid #555555;
+    outline-offset: -1px;
+}
+
+.about-card-badge {
+    background-color: #c5df00;
+    border-radius: 30px;
+    padding: 12px 32px;
+    width: fit-content;
+    margin-bottom: 32px;
+    color: #414141;
+    font-size: 42px;
+    font-family: Coolville;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 42px;
+    display: inline-block;
+}
+
+.about-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.about-card-text,
+.about-card-text-lg {
+    font-size: 18px;
+    line-height: 29.25px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.about-card-text {
+    color: #939393;
+}
+
+.about-card-dark .about-card-text {
+    color: #c5c5c5;
+}
+
+.about-card-text-lg {
+    color: #c5c5c5;
+    font-size: 18px;
+}
+
+.about-card-alt .about-card-text {
+    color: #939393;
+}
+
+.about-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.about-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    height: auto;
+    position: relative;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    background-color: #c5df00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: #333333;
+    font-size: 14px;
+    font-family: Figtree;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.step-text {
+    font-size: 16px;
+    line-height: 26px;
+    color: #939393;
+    font-weight: 400;
+    margin: 0;
+    flex: 1;
+}
+
+.about-card-full {
+    background-color: #3b3b3b;
+    border-radius: 45px;
+    outline: 1px solid #555555;
+    outline-offset: -1px;
+    padding: 52px;
+    max-width: 1304px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-card-full .about-card-badge {
+    margin-bottom: 32px;
+}
+
+.about-card-full .about-card-content {
+    gap: 24px;
+}
+
+.about-card-full .about-card-text-lg {
+    color: #c5c5c5;
+}
+
+/* About page responsive */
+@media (max-width: 1024px) {
+    .about-section,
+    .about-hero {
+        padding: 40px 60px;
+    }
+
+    .about-two-column {
+        gap: 24px;
+    }
+
+    .about-hero-card {
+        padding: 60px 48px;
+    }
+
+    .about-card {
+        padding: 40px;
+    }
+
+    .about-card-full {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section,
+    .about-hero {
+        padding: 32px 24px;
+    }
+
+    .about-hero {
+        padding: 110px 24px 40px;
+    }
+
+    .about-hero-card {
+        border-radius: 32px;
+        padding: 40px 24px;
+    }
+
+    .about-hero-title {
+        font-size: 48px;
+        line-height: 52.8px;
+    }
+
+    .about-hero-text {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .about-two-column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .about-card {
+        border-radius: 32px;
+        padding: 32px;
+        min-height: auto;
+    }
+
+    .about-card-badge {
+        border-radius: 24px;
+        padding: 10px 24px;
+        margin-bottom: 20px;
+    }
+
+    .about-card-badge {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .about-card-text,
+    .about-card-text-lg {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .step-number {
+        width: 28px;
+        height: 28px;
+        margin-top: 2px;
+    }
+
+    .step-number::before {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .step-text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .about-card-full {
+        border-radius: 32px;
+        padding: 32px;
+    }
+
+    .about-steps {
+        gap: 12px;
+    }
+
+    .about-step {
+        gap: 12px;
+    }
 }
 
 /* Selection */

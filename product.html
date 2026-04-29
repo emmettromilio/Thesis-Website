@@ -8,29 +8,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/coolville" rel="stylesheet">
+
 </head>
 <body>
     <!-- Main Container -->
-    <div class="web-home">
-        
+    <div class="web-home product-page">
+
         <!-- Header -->
         <header class="header">
             <div class="header-container">
                 <!-- Logo with Title -->
-                <div class="logo">
-                    <img src="allimages/logo.png" alt="Synapse Logo" class="logo-img">
-                    <span class="logo-title">SYNAPSE</span>
-                </div>
-                
+                <a href="index.html" class="logo-link">
+                    <div class="logo">
+                        <img src="allimages/logo.png" alt="Synapse Logo" class="logo-img">
+                        <span class="logo-title">SYNAPSE</span>
+                    </div>
+                </a>
+
                 <!-- Navigation -->
                 <nav class="nav">
-                    <a href="#" class="nav-link active">Product</a>
-                    <a href="#" class="nav-link">About</a>
-                    <a href="#" class="nav-link">Resources</a>
-                    <a href="#" class="nav-link">Methods</a>
+                    <a href="product.html" class="nav-link active">Product</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="resources.html" class="nav-link">Resources</a>
+                    <a href="methods.html" class="nav-link">Methods</a>
                 </nav>
-                
+
                 <!-- Action Buttons -->
                 <div class="header-actions">
                     <button class="btn-secondary">Login</button>
@@ -39,325 +41,160 @@
             </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-card">
-                    <div class="hero-text-content">
-                        <h1 class="hero-title-product">
-                            NEW WAY TO IDEATE
-                        </h1>
-                        <p class="hero-subtitle-product">Synapse gives you a new way to develop ideas. Pick from a range of proven ideation methods, use them your way, and keep everything organised in one place. Whether you're working solo or with a team, Synapse helps you go from a rough thought to a refined concept.</p>
-                    </div>
-
-                    <!-- Hero Images -->
-                    <div class="hero-graphics-product">
-                        <div class="hero-graphic1-product">
-                            <img src="allimages/guidedideation_container.png" alt="Guided Ideation" class="product1-img">
+        <main>
+            <!-- Product Hero -->
+            <section class="product-hero">
+                <div class="section-inset-container">
+                    <div class="product-hero-card">
+                        <div class="product-hero-copy">
+                            <p class="eyebrow-text">new way to ideate</p>
+                            <h1 class="product-hero-title">Synapse gives you a new way to develop ideas.</h1>
+                            <p class="product-hero-text">Pick from a range of proven ideation methods, use them your way, and keep everything organised in one place.</p>
                         </div>
-                        <div class="hero-graphic2-product">
-                            <img src="allimages/freeformideation_container.png" alt="Freeform Ideation" class="product2-img">
+
+                        <div class="product-pill-group">
+                            <article class="product-pill-card">
+                                <div class="product-pill-bulb">
+                                    <img src="allimages/freeform_bulb_icon.png" alt="Bulb icon">
+                                </div>
+                                <div>
+                                    <p class="product-pill-title">Guided Ideation</p>
+                                    <p class="product-pill-text">Smart, structured approach to tool usage</p>
+                                </div>
+                            </article>
+
+                            <article class="product-pill-card">
+                                <div class="product-pill-bulb">
+                                    <img src="allimages/freeform_bulb_icon.png" alt="Bulb icon">
+                                </div>
+                                <div>
+                                    <p class="product-pill-title">Freeform Ideation</p>
+                                    <p class="product-pill-text">Canvas style, drag and drop. Made for advanced thinkers.</p>
+                                </div>
+                            </article>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Ideate With Tools Section -->
-        <section class="tools-section">
-            <div class="section-inset-container">
-                <div class="tools-section-bg">
-                    <div class="section-content-grid">
-                        <!-- Left Column: Text + List -->
-                        <div class="section-text-column">
-                            <div class="section-header">
-                                <div class="icon-box">
-                                    <img src="allimages/logo_black.png" alt="Icon" class="section-icon">
-                                </div>
-                                <h2 class="section-title">IDEATE WITH TOOLS</h2>
-                            </div>
-                            
-                            <p class="section-description">
-                                Synapse offers a variety of thought provoking methods to evolve and filter out ideas. 
-                                We currently offer 5 different ideation techniques you can use guided or freely.
-                            </p>
-                            
-                            <!-- Method List with Custom Bullets -->
-                            <ul class="method-list">
-                                <li class="method-item">
-                                    <span class="custom-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                    Mind Maps
-                                </li>
-                                <li class="method-item">
-                                    <span class="custom-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                    Fishbone Diagram
-                                </li>
-                                <li class="method-item">
-                                    <span class="custom-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                    Lotus Diagram
-                                </li>
-                                <li class="method-item">
-                                    <span class="custom-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                    SCAMPER
-                                </li>
-                                <li class="method-item">
-                                    <span class="custom-bullet">
-                                        <span class="bullet-dot"></span>
-                                    </span>
-                                    Sailboat Diagram
-                                </li>
+            <!-- Summary -->
+            <section class="product-summary">
+                <div class="section-inset-container">
+                    <div class="product-summary-card">
+                        <h2 class="product-summary-heading">Two ways to think. One place to build.</h2>
+                        <p class="product-summary-copy">Synapse offers two distinct ideation modes, each designed for a different kind of thinking. Below you will find a breakdown of how each mode works, what tools are available, and how to get the most out of them.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Freeform Ideation -->
+            <section class="product-feature product-feature--freeform">
+                <div class="section-inset-container">
+                    <div class="product-feature-card">
+                        <div class="product-feature-badge product-feature-badge--freeform">
+                            <img src="allimages/freeform_bulb_icon.png" alt="Freeform icon" class="badge-icon">
+                            <span class="badge-title">Freeform Ideation</span>
+                        </div> 
+                        <div class="product-feature-visual-wrap">
+                            <img src="allimages/freeform_demo.png" alt="Freeform ideation interface" class="feature-image">
+                        </div>
+                       
+                        <div class="product-feature-content">
+                            <h2 class="panel-title">Your ideas, your canvas, your rules.</h2>
+                            <p class="panel-description">Freeform Ideation gives you an open whiteboard to think without limits. Drag and drop methods onto your canvas and build ideas freely.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-info-row">
+                        <article class="product-info-card product-info-card--bright">
+                            <h3 class="info-card-title">How it works</h3>
+                            <ol class="info-card-list">
+                                <li>Open the Freeform canvas</li>
+                                <li>Drag and drop any ideation method onto your whiteboard</li>
+                                <li>An interactive template appears, ready to fill in</li>
+                                <li>Build, branch, and connect your ideas freely</li>
+                            </ol>
+                        </article>
+
+                        <article class="product-info-card product-info-card--bright">
+                            <h3 class="info-card-title">Why use Freeform?</h3>
+                            <ul class="info-card-list">
+                                <li>Perfect for early-stage brainstorming</li>
+                                <li>Mix and match multiple methods on one canvas</li>
+                                <li>No rigid structure, explore ideas at your own pace</li>
+                                <li>Ideal for solo sessions or open-ended concept development</li>
                             </ul>
-                        </div>
-                        
-                        <!-- Right Column: Method Pills -->
-                        <div class="method-pills-column">
-                            <div class="method-pill-container" style="position: absolute; top: 0; left: 50px;">
-                                <div class="pill-icon-circle">
-                                    <img src="allimages/mindmap.png" alt="Mind Maps" class="pill-icon">
-                                </div>
-                                <span class="pill-label">Mind Maps</span>
-                            </div>
-                            
-                            <div class="method-pill-container" style="position: absolute; top: 10px; right: 20px;">
-                                <div class="pill-icon-circle">
-                                    <img src="allimages/fishbone.png" alt="Fishbone" class="pill-icon">
-                                </div>
-                                <span class="pill-label">Fishbone Diagram</span>
-                            </div>
-                            
-                            <div class="method-pill-container" style="position: absolute; top: 110px; left: 200px;">
-                                <div class="pill-icon-circle">
-                                    <img src="allimages/sailboat.png" alt="Sailboat" class="pill-icon">
-                                </div>
-                                <span class="pill-label">Sailboat Diagram</span>
-                            </div>
-                            
-                            <div class="method-pill-container" style="position: absolute; bottom: 20px; left: 90px;">
-                                <div class="pill-icon-circle">
-                                    <img src="allimages/lotus.png" alt="Lotus" class="pill-icon">
-                                </div>
-                                <span class="pill-label">Lotus Diagram</span>
-                            </div>
-                            
-                            <div class="method-pill-container" style="position: absolute; bottom: 20px; right: 60px;">
-                                <div class="pill-icon-circle">
-                                    <img src="allimages/scamper.png" alt="SCAMPER" class="pill-icon">
-                                </div>
-                                <span class="pill-label">SCAMPER</span>
-                            </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Map Your Thoughts Section -->
-        <section class="map-section">
-            <div class="section-inset-container">
-                <div class="map-section-bg">
-                    <div class="section-split-layout">
-                        <!-- Left: Demo Image -->
-                        <div class="demo-container">
-                            <img src="allimages/mindmap_demo.png" alt="Mind Map Demo" class="demo-image">
-                        </div>
-                        
-                        <!-- Right: Content -->
-                        <div class="section-text-content">
-                            <div class="section-header">
-                                <div class="icon-box">
-                                    <img src="allimages/logo_black.png" alt="Icon" class="section-icon">
-                                </div>
-                                <h2 class="section-title">MAP YOUR THOUGHTS</h2>
-                            </div>
-                            
-                            <p class="section-description-alt">
-                                Visualize connections and relationships between ideas with powerful mind mapping tools. 
-                                See the big picture while managing every detail.
-                            </p>
-                            
-                            <!-- Feature Cards -->
-                            <div class="feature-cards">
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="9" stroke="#C5DF00" stroke-width="2"/>
-                                            <path d="M10 6V10L13 12" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Visual Hierarchy</h3>
-                                        <p class="feature-card-text">Organize ideas in nested structures</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M10 2V18M2 10H18" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                            <circle cx="10" cy="10" r="9" stroke="#C5DF00" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Auto Layout</h3>
-                                        <p class="feature-card-text">Smart positioning and spacing</p>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Guided Ideation -->
+            <section class="product-feature product-feature--guided">
+                <div class="section-inset-container">
+                    <div class="product-feature-card">
+             <div class="product-feature-badge product-feature-badge--guided">
+            <img src="allimages/logo_black.png" alt="Guided icon" class="badge-icon">
+         <span class="badge-title">Guided Ideation</span>
+             </div>
+    <div class="product-feature-visual-wrap">
+        <img src="allimages/scamper_demo.png" alt="Guided ideation interface" class="feature-image">
+    </div>
+                        <div class="product-feature-content">
+                            <h2 class="panel-title">Structure your thinking. Reach a result every time.</h2>
+                            <p class="panel-description">Guided Ideation turns brainstorming into a focused session. Select methods, set timing, and move through prompts to turn ideas into outcomes.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Organize Projects Section -->
-        <section class="organize-section">
-            <div class="section-inset-container">
-                <div class="organize-section-bg">
-                    <div class="section-split-layout reverse">
-                        <!-- Left: Content -->
-                        <div class="section-text-content">
-                            <div class="section-header">
-                                <div class="icon-box">
-                                    <img src="allimages/logo_black.png" alt="Icon" class="section-icon">
-                                </div>
-                                <h2 class="section-title">ORGANIZE PROJECTS</h2>
-                            </div>
-                            
-                            <p class="section-description-alt">
-                                Bring order to your creative chaos. Organize and prioritize projects with our intuitive workspace.
-                            </p>
-                            
-                            <!-- Feature Cards -->
-                            <div class="feature-cards">
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <rect x="3" y="3" width="6" height="6" rx="1" stroke="#C5DF00" stroke-width="2"/>
-                                            <rect x="11" y="3" width="6" height="6" rx="1" stroke="#C5DF00" stroke-width="2"/>
-                                            <rect x="3" y="11" width="6" height="6" rx="1" stroke="#C5DF00" stroke-width="2"/>
-                                            <rect x="11" y="11" width="6" height="6" rx="1" stroke="#C5DF00" stroke-width="2"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Splash Variety</h3>
-                                        <p class="feature-card-text">Multiple view options for your projects</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="7" stroke="#C5DF00" stroke-width="2"/>
-                                            <path d="M16 16L19 19" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Quick Search</h3>
-                                        <p class="feature-card-text">Find what you need instantly</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Right: Demo Image -->
-                        <div class="demo-container">
-                            <img src="allimages/home_demo.png" alt="Projects Demo" class="demo-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="product-info-row">
+                        <article class="product-info-card product-info-card--bright">
+                            <h3 class="info-card-title">How it works</h3>
+                            <ol class="info-card-list">
+                                <li>Select the ideation methods you want to use</li>
+                                <li>Structure your session and set your parameters</li>
+                                <li>Work through timed prompts and guided steps</li>
+                                <li>Filter your ideas down to a refined, usable result</li>
+                            </ol>
+                        </article>
 
-        <!-- Create Your Way Section -->
-        <section class="create-section">
-            <div class="section-inset-container">
-                <div class="create-section-bg">
-                    <div class="section-split-layout">
-                        <!-- Left: Demo Image -->
-                        <div class="demo-container">
-                            <img src="allimages/scamper_demo.png" alt="SCAMPER Demo" class="demo-image">
-                        </div>
-                        
-                        <!-- Right: Content -->
-                        <div class="section-text-content">
-                            <div class="section-header">
-                                <div class="icon-box">
-                                    <img src="allimages/logo_black.png" alt="Icon" class="section-icon">
-                                </div>
-                                <h2 class="section-title">CREATE YOUR WAY</h2>
-                            </div>
-                            
-                            <p class="section-description-alt">
-                                Express your ideas freely with our flexible creation tools. 
-                                Whether you prefer structured templates or freeform creativity, we've got you covered.
-                            </p>
-                            
-                            <!-- Feature Cards -->
-                            <div class="feature-cards">
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M3 17L7 13M7 13L10 10M7 13L4 10M10 10L13 7M10 10L13 13M17 3L13 7M13 7L16 10" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Freeform Canvas</h3>
-                                        <p class="feature-card-text">Draw and create without limits</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="feature-card">
-                                    <div class="feature-icon-box">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <path d="M4 16L6 10L4 4M16 4L14 10L16 16" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                            <path d="M8 6H12M7 14H13" stroke="#C5DF00" stroke-width="2" stroke-linecap="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="feature-card-content">
-                                        <h3 class="feature-card-title">Styling Options</h3>
-                                        <p class="feature-card-text">Customize colors and fonts</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <article class="product-info-card product-info-card--bright">
+                            <h3 class="info-card-title">Why use Guided Ideation?</h3>
+                            <ul class="info-card-list">
+                                <li>Great for when you need results, not just ideas</li>
+                                <li>Time limits and prompts keep your brain working</li>
+                                <li>Built-in structure removes the pressure of knowing where to start</li>
+                                <li>Every session ends with something to move forward with</li>
+                            </ul>
+                        </article>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="section-inset-container">
-                <div class="cta-card">
-                    <div class="cta-content">
-                        <h2 class="cta-title">READY TO GET<br>CREATIVE?</h2>
-                        <p class="cta-text">Join thousands of creators today</p>
-                        <button class="btn-cta">Get Started</button>
-                    </div>
-                    
-                    <!-- CTA Icon -->
-                    <div class="cta-icon">
-                        <svg width="187" height="43" viewBox="0 0 187 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g opacity="0.5">
-                                <path d="M6.13072 9.57338L9.66329 7.03032L12.1217 10.6588L8.58897 13.2019L6.13072 9.57338Z" fill="#2A2A2A"/>
-                                <path d="M0.140006 8.48771L3.67258 5.94462L6.13096 9.57307L2.59839 12.1162L0.140006 8.48771Z" fill="#2A2A2A"/>
-                                <path d="M18.6692 42.6821L11.6396 42.7429L11.6101 39.12L18.6397 39.0592L18.6692 42.6821Z" fill="#2A2A2A"/>
-                                <path d="M22.1399 37.2172L15.1111 37.2779L15.0816 33.655L22.1103 33.5942L22.1399 37.2172Z" fill="#2A2A2A"/>
-                                <path d="M14.8827 1.70158C18.318 1.77527 21.6434 3.03619 24.2927 5.26964C26.942 7.50315 28.7514 10.5709 29.4121 13.9503C30.0726 17.3297 29.5435 20.8118 27.9155 23.8028L27.7602 24.0813C26.4148 26.4286 24.4451 28.3392 22.0774 29.615L22.0951 31.7825L15.0662 31.8434L15.0365 28.2205L19.5963 28.181L19.2731 27.3896C21.7692 26.4116 23.8324 24.5928 25.1113 22.2433C26.3502 19.9672 26.7788 17.3292 26.3326 14.7532L26.287 14.5037C25.7843 11.9321 24.4345 9.5901 22.4586 7.85119L22.2656 7.68479C20.1896 5.93468 17.5849 4.94452 14.8935 4.88217L14.8676 1.70138L14.8827 1.70158Z" fill="#2A2A2A"/>
-                            </g>
-                        </svg>
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="section-inset-container">
+                    <div class="cta-card">
+                        <div class="cta-content">
+                            <h2 class="cta-title">READY TO GET<br>CREATIVE?</h2>
+                            <p class="cta-text">Start your ideation journey today!</p>
+                            <button class="btn-cta">Get Started</button>
+                        </div>
+
+                        <div class="cta-icon">
+                            <svg width="187" height="43" viewBox="0 0 187 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.5">
+                                    <path d="M6.13072 9.57338L9.66329 7.03032L12.1217 10.6588L8.58897 13.2019L6.13072 9.57338Z" fill="#2A2A2A"/>
+                                    <path d="M0.140006 8.48771L3.67258 5.94462L6.13096 9.57307L2.59839 12.1162L0.140006 8.48771Z" fill="#2A2A2A"/>
+                                    <path d="M18.6692 42.6821L11.6396 42.7429L11.6101 39.12L18.6397 39.0592L18.6692 42.6821Z" fill="#2A2A2A"/>
+                                    <path d="M22.1399 37.2172L15.1111 37.2779L15.0816 33.655L22.1103 33.5942L22.1399 37.2172Z" fill="#2A2A2A"/>
+                                    <path d="M14.8827 1.70158C18.318 1.77527 21.6434 3.03619 24.2927 5.26964C26.942 7.50315 28.7514 10.5709 29.4121 13.9503C30.0726 17.3297 29.5435 20.8118 27.9155 23.8028L27.7602 24.0813C26.4148 26.4286 24.4451 28.3392 22.0774 29.615L22.0951 31.7825L15.0662 31.8434L15.0365 28.2205L19.5963 28.181L19.2731 27.3896C21.7692 26.4116 23.8324 24.5928 25.1113 22.2433C26.3502 19.9672 26.7788 17.3292 26.3326 14.7532L26.287 14.5037C25.7843 11.9321 24.4345 9.5901 22.4586 7.85119L22.2656 7.68479C20.1896 5.93468 17.5849 4.94452 14.8935 4.88217L14.8676 1.70138L14.8827 1.70158Z" fill="#2A2A2A"/>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <!-- Footer -->
         <footer class="footer">
@@ -367,13 +204,13 @@
                     <div class="footer-column">
                         <h3 class="footer-heading">Explore</h3>
                         <ul class="footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Tips and Resources</a></li>
-                            <li><a href="#">How it Works</a></li>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="product.html">Product</a></li>
+                            <li><a href="resources.html">Tips and Resources</a></li>
+                            <li><a href="about.html">How it Works</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Support Column -->
                     <div class="footer-column">
                         <h3 class="footer-heading">Support</h3>
@@ -384,7 +221,7 @@
                             <li><a href="#">Accessibility</a></li>
                         </ul>
                     </div>
-                    
+
                     <!-- Newsletter Column -->
                     <div class="footer-column newsletter">
                         <h3 class="footer-heading">Stay in the Loop</h3>
@@ -395,7 +232,7 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <!-- Footer Bottom -->
                 <div class="footer-bottom">
                     <div class="footer-brand">
@@ -403,7 +240,7 @@
                         <span class="divider"></span>
                         <span class="copyright">© 2026 Synapse. All rights reserved.</span>
                     </div>
-                    
+
                     <div class="social-links">
                         <a href="#" class="social-icon">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
