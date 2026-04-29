@@ -1,3 +1,11 @@
 htacess.
 
 AddType application/json .json
+AddType font/woff2 .woff2
+AddType font/woff .woff
+AddType application/vnd.ms-fontobject .eot
+AddType application/x-font-ttf .ttf
+AddType image/svg+xml .svg
+<FilesMatch "\.(woff2|woff|eot|ttf|svg)$">
+    Header set Access-Control-Allow-Origin "*"
+</FilesMatch>

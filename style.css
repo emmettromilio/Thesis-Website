@@ -7,7 +7,9 @@
 
 @font-face {
     font-family: 'Coolville';
-    src: url('fonts/Coolville.ttf') format('truetype');
+    src: url('fonts/e32565262cad9431a3ad048be471bd4c.woff2') format('woff2'),
+         url('fonts/Coolville.ttf.woff') format('woff'),
+         url('fonts/Coolville.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
