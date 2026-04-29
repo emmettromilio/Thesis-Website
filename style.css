@@ -9,7 +9,8 @@
     font-family: 'Coolville';
     src: url('fonts/e32565262cad9431a3ad048be471bd4c.woff2') format('woff2'),
          url('fonts/Coolville.ttf.woff') format('woff'),
-         url('fonts/Coolville.ttf') format('truetype');
+         url('fonts/Coolville.ttf.eot') format('embedded-opentype'),
+         url('fonts/Coolville.svg#Coolville') format('svg');
     font-weight: normal;
     font-style: normal;
 }
