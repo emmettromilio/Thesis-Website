@@ -819,6 +819,7 @@ body {
     font-size: 36px;
     line-height: 1.1;
     color: #c5df00;
+    font-weight: 100;
     text-transform: uppercase;
     letter-spacing: -0.9px;
     margin-bottom: 24px;
@@ -888,6 +889,7 @@ body {
     font-family: 'Coolville', sans-serif;
     font-size: 32px;
     color: #2a2a2a;
+    font-weight: 100;
     text-transform: uppercase;
     letter-spacing: -1px;
     margin: 0;
